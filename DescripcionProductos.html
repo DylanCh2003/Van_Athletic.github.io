@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descripción</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./Css/wickedcss.min (1).css">
+    <link rel="stylesheet" href="./Css/style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #2c3e50;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#" style="color: white;">VansAthletic</a>
+           
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./index.html" style="color: white;">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="AcercaDe.html" style="color: white;">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Portafolio.html" style="color: white;">Preguntas Frecuentes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./Nosotros.html" style="color: white;">Nosotros</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <header class="hero-section">
+        <div class="container">
+            <h1>Bienvenido a VansAthletic</h1>
+            <p class="lead">Sublimación | Impresión de Tazas y Gorras | Impresión Grafica</p>
+            <a href="./Productos.html" class="btn btn-light btn-lg mt-3">Ver Productos</a>
+        </div>
+    </header>
+
+
+    <!-- Main -->
+     
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasRightLabel">Carrito de compras</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="row mb-4 text-primary">
+                <div class="col-md-4 col-lg-4 col-xl-4">
+                    <h6 class="fw-bold">Producto</h6>
+                </div>
+                <div class="col-md-2 col-lg-2 col-xl-4">
+                    <h6 class="fw-bold">Precio</h6>
+                </div>
+                <div class="col-md-2 col-lg-2 col-xl-4">
+                    <h6 class="fw-bold">Subtotal</h6>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div id="detail">
+                <div class="row mb-4 align-items-center">
+                    <div class="col-md-4 col-lg-4 col-xl-4">
+                        <p class="text-muted mb-0 name-producto">Producto</p>
+                    </div>
+                    <div class="col-md-2 col-lg-2 col-xl-2">
+                        <input min="0" name="quantity" value="1" type="number"
+                            class="form-control form-control-sm quantity-libro" />
+                    </div>
+                    <div class="col-md-2 col-lg-2 col-xl-2">
+                        <p class="mb-0 price-producto">&cent; 15.00</p>
+                    </div>
+                    <div class="col-md-2 col-lg-2 col-xl-2">
+                        <p class="mb-0 subtotal-producto">&cent; 15.00</p>
+                    </div>
+                    <div class="col-md-2 col-lg-2 col-xl-2 text-end">
+                        <button type="button" class="btn btn-outline-danger btn-sm" data-bs-toggle="modal"
+                            data-bs-target="#confirmDeleteModal">
+                            <i class="bi bi-trash-fill"></i>
+                        </button>
+                    </div>
+                </div>
+                <hr class="my-4">
+            </div>
+            <div class="col-md-3">
+                <h4 class="mb-0 text-end" id="total-compra">&cent;15.00</h4>
+            </div>
+            <div class="col-md-2 col-lg-2 col-xl-2" style="margin-top: 20px;">
+                <a class="btn btn-lg " href="compra.html">Detalle</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="principal">
+        <main class="container-main" id="detalle">
+            <div class="row align-items-start">
+                <div class="col-md-5 mb-5">
+                    <img id="imagen" src="./img/image-not-found.jpg" alt="Imagen del producto" class="product-image"
+                        role="img">
+
+
+
+                </div>
+
+                <div class="col-md-7">
+                    <div class="product-card ">
+                        <h2 id="nombre" class="card-title">Nombre de la prenda</h2>
+                        <p id="precio" class="precio">&cent;100000</p>
+                        <p id="descripcion" class="texto"><strong>Descripción:</strong></p>
+                        <p id="stock" class="texto"><strong>Stock:</strong></p>
+                        <p id="estado" class="texto"><strong>Estado:</strong></p>
+                        <p id="garantia" class="texto"><strong>Estado:</strong></p>
+                        <p id="tiempoEntrega" class="texto"><strong>Tiempo de Entrega:</strong></p>
+                        <p id="gastosEnvio" class="texto"><strong>Gastos de Envio:</strong></p>
+                        <p id="reseñas" class="texto"><strong>Reseñas:</strong></p>
+                </div>
+            </div>
+
+            <h2 class="text-center related-products-title">Productos Relacionados</h2>
+            <div class="row row-cols-1 row-cols-md-3 g-4  mb-5">
+                <div class="col">
+                    <div class="card card-related-products">
+                        <img src="./Img/Uniforme Basico.jpg" class="card-img-top" alt="Gorra">
+                        <div class="card-body">
+                            <h5 class="card-title">Uniforme Basico</h5>
+                            <p class="card-text">Uniforme Basico</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card card-related-products">
+                        <img src="./Img/Lapicero promocional azu.jpg" class="card-img-top" alt="Gorro">
+                        <div class="card-body">
+                            <h5 class="card-title">Lapicero metálico Azul</h5>
+                            <p class="card-text">Lapicero metálico Azul</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card card-related-products">
+                        <img src="./Img/botella-agua-acero-inoxidable-500-ml-sublimacion.jpg" class="card-img-top" alt="Sudadera">
+                        <div class="card-body">
+                            <h5 class="card-title">Botella de acero inoxidable 500ml</h5>
+                            <p class="card-text">Botella de acero inoxidable</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+  
+
+    
+
+
+
+    <!-- Contact Section -->
+<section id="contact" class="py-4" style="background-color: #2c3e50; color: white;">
+    <div class="container">
+        <h2 class="text-center">Contacto</h2>
+        <p class="text-center">¿Tienes un proyecto en mente? ¡Hablemos!</p>
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <form id="contact-form">
+                    <div class="mb-3">
+                        <label for="fullName" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="fullName" name="name" placeholder="Tu nombre" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Tu email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Mensaje</label>
+                        <textarea class="form-control" id="message" name="message" placeholder="Tu mensaje" required></textarea>
+                    </div>
+                    
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_captcha" value="false">
+                    
+                    <button type="submit" class="btn btn-light">Enviar</button>
+                </form>                
+            </div>
+        </div>
+    </div>
+</section>
+
+    
+
+    <!-- Footer -->
+ <!-- Footer -->
+<footer class="bg-dark text-light pt-5 pb-4">
+    <div class="container text-center text-md-start">
+        <div class="row text-center text-md-start">
+            <!-- Información de la Empresa -->
+            <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                <h5 class="text-uppercase mb-4 font-weight-bold">Sobre Nosotros</h5>
+                <hr class="mb-4">
+                <p>
+                    Somos una empresa especializada en sublimación, confección de uniformes, impresión de tazas, gorras, personalización de lapiceros y mucho más. Nos dedicamos a ofrecer productos personalizados de alta calidad para cada necesidad.
+                </p>
+            </div>
+            
+            <!-- Servicios -->
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                <h5 class="text-uppercase mb-4 font-weight-bold">Servicios</h5>
+                <hr class="mb-4">
+                <p>
+                    <a href="#sublimacion" class="text-light" style="text-decoration: none;">Sublimación</a>
+                </p>
+                <p>
+                    <a href="#confeccion" class="text-light" style="text-decoration: none;">Confección de Uniformes</a>
+                </p>
+                <p>
+                    <a href="#impresion" class="text-light" style="text-decoration: none;">Impresión de Tazas y Gorras</a>
+                </p>
+            </div>
+
+            <!-- Recursos -->
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                <h5 class="text-uppercase mb-4 font-weight-bold">Recursos</h5>
+                <hr class="mb-4">
+                <p>
+                    <a href="#faq" class="text-light" style="text-decoration: none;">Preguntas Frecuentes</a>
+                </p>
+                <p>
+                    <a href="#contact" class="text-light" style="text-decoration: none;">Contacto</a>
+                </p>
+            </div>
+
+            <!-- Contacto -->
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                <h5 class="text-uppercase mb-4 font-weight-bold">Contacto</h5>
+                <hr class="mb-4">
+                <p>
+                    <i class="fas fa-home me-3"></i> San José, Costa Rica
+                </p>
+                <p>
+                    <a href="mailto:info@empresa.com" target="_blank" class="text-light" style="text-decoration: none;">
+                        <i class="fas fa-envelope me-3"></i>VansAtletic@gmail.com
+                    </a>
+                </p>
+                <p>
+                    <a href="https://wa.me/50683496724" target="_blank" class="text-light" style="text-decoration: none;">
+                        <i class="fab fa-whatsapp"></i>+506 8349-6724
+                    </a>
+                </p>
+                <p>
+                    <a href="https://wa.me/50671571896" target="_blank" class="text-light" style="text-decoration: none;">
+                        <i class="fab fa-whatsapp"></i>+506 7157-1896
+                    </a>
+                </p>
+            </div>
+        </div>
+        
+        <!-- Derechos y Redes Sociales -->
+        <hr class="mb-4">
+        <div class="text-center mb-2">
+            <p>
+                &copy; 2024 Empresa de Sublimación. Todos los derechos reservados.
+            </p>
+        </div>
+        <div class="text-center">
+            <ul class="list-unstyled list-inline">
+                <li class="list-inline-item">
+                    <a href="https://www.linkedin.com/in/empresa" target="_blank" class="text-light"><i class="fab fa-linkedin"></i></a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="https://github.com/empresa" target="_blank" class="text-light"><i class="fab fa-github"></i></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+    integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="./JS/Productos.js"></script>
+    <script src="./Js/DetalleProducto.js"></script>
+    <script src="./Js/ListaProductos.js"></script>
+    <script src="./JS/Script.js"></script>
+</body>
+</html>
